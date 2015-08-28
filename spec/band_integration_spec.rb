@@ -11,7 +11,7 @@ describe('the band path', :type => :feature) do
     click_link('Add a Band')
     fill_in('band_name', :with => 'My Chemical Romance')
     click_button('Add Band')
-    expect(page).to have_content('My Chemical Romance')
+    expect(page).to have_content('My chemical romance')
   end
 
   it('allow user to access information for a specific band') do
@@ -19,16 +19,16 @@ describe('the band path', :type => :feature) do
     click_link('Add a Band')
     fill_in('band_name', :with => 'System of a Down')
     click_button('Add Band')
-    click_link('System of a Down')
-    expect(page).to have_content('System of a Down')
+    click_link('System of a down')
+    expect(page).to have_content('System of a down')
   end
 
   it('allows user to update a bands name') do
     visit('/')
     click_link('Add a Band')
-    fill_in('band_name', :with => 'System of a Down')
+    fill_in('band_name', :with => 'System of a down')
     click_button('Add Band')
-    click_link('System of a Down')
+    click_link('System of a down')
     fill_in('update_name', :with => 'Weezer')
     click_button('Edit Band')
     expect(page).to have_content('Weezer')
