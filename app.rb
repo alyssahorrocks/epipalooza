@@ -68,7 +68,7 @@ end
 
 post('/venues') do
   name = params.fetch('venue_name')
-  @venue = Venue.create({:name => name})
+  @venue = Venue.find_or_create_by({:name => name})
   redirect('/venues')
 end
 
