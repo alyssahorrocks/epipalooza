@@ -67,8 +67,12 @@ end
 
 post('/venues') do
   name = params.fetch('venue_name')
-  @venue = Venue.find_or_create_by({:name => name})
-  redirect('/venues')
+  @venue = Venue.new({:name => name})
+  if @venue.save()
+    redirect('/venues')
+  else
+    erb(:errors)
+  end
 end
 
 get('/venues/:id') do

@@ -2,6 +2,7 @@ require('spec_helper')
 
 describe(Venue) do
   it { should validate_presence_of(:name) }
+  it { should validate_uniqueness_of(:name) }
 
   it("capitalize any input") do
     venue = Venue.create({:name => "mAin sTage"})

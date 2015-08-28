@@ -2,6 +2,7 @@ class Venue < ActiveRecord::Base
   has_and_belongs_to_many(:bands)
 
   validates(:name, :presence => true)
+  validates(:name, :uniqueness => {:case_sensitive => false})
 
   before_save(:set_name)
 

@@ -1,5 +1,11 @@
 <h3>Add a Venue</h3>
 
+<form action='/venues' method="post">
+  <input id='venue_name' name='venue_name' placeholder='Venue Name'>
+  <button type='submit' class='btn-md btn-success'>Add Venue</button>
+</form>
+
+
 <% if @venues.any?() %>
   <% @venues.each() do |venue| %>
   <p><a href='/venues/<%= venue.id() %>'><%= venue.name() %></a></p><br>
@@ -7,10 +13,5 @@
 <% else %>
   <h4>"Turn up the lights in here baby, extra bright, I want y'all to see this."</h4>
 <% end %>
-
-<form action='/venues' method="post">
-  <input id='venue_name' name='venue_name' placeholder='Venue Name'>
-  <button type='submit' class='btn-md btn-success'>Add Venue</button>
-</form>
 
 <a href="/">Back</a>
