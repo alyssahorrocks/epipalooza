@@ -15,8 +15,18 @@ end
 
 post('/bands') do
   name = params.fetch('band_name')
-  @band = Band.create({:name => name})
-  redirect('/')
+  @band = Band.new({:name => name})
+  if @band.save()
+    redirect('/')
+  else
+    erb(:errors)
+  end
+end
+
+post('/bands') do
+  name = params.fetch("name")
+  recipe = Recipe.create({:name => name, :instruction => nil})
+
 end
 
 get('/bands/:id') do
