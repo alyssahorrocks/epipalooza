@@ -4,7 +4,14 @@
 
 <% if @bands.any?() %>
   <% @bands.each() do |band| %>
-    <p><a href='/bands/<%= band.id() %>'><%= band.name() %></a></p><br>
+    <p><a href='/bands/<%= band.id() %>'><%= band.name() %><br></a>
+      <% if band.venues().any? %>
+        <% band.venues().each() do |venue| %>
+          <%= venue.name() %> |
+        <% end %>
+      <% end %>
+    </p>
+    <br>
   <% end %>
 <% else %>
   <h4>"Something touched me deep inside the day the music died."</h4>

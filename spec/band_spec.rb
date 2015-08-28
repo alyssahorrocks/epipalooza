@@ -3,9 +3,9 @@ require('spec_helper')
 describe(Band) do
   it { should validate_presence_of(:name) }
 
-  it("capitalize any input") do
-    band = Band.create({:name => "TAYLOR SWIFT"})
-    expect(band.name()).to(eq("Taylor swift"))
+  it("set the input to capitalized words") do
+    band = Band.create({:name => "tAylor SWIFT"})
+    expect(band.name()).to(eq("Taylor Swift"))
   end
 
   describe('#venues') do

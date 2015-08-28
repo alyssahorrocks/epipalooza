@@ -48,7 +48,6 @@ post('/bands/:id') do
   @band = Band.find(params.fetch('id'))
   venue_id = Venue.find(params.fetch('venue_ids'))
   @band.venues().push(venue_id)
-  @venues = Venue.all()
   redirect("/bands/#{@band.id()}")
 end
 

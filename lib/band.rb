@@ -3,13 +3,13 @@ class Band < ActiveRecord::Base
 
   validates(:name, :presence => true)
 
-  before_save(:capitalize_name)
+  before_save(:set_name)
 
 
   private
 
-  define_method(:capitalize_name) do
-    self.name = (name.downcase().capitalize!())    
+  define_method(:set_name) do
+    self.name = (name.downcase().split().each() { |word| word.capitalize! }.join(" "))
   end
 
 end
