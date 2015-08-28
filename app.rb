@@ -41,3 +41,9 @@ patch('/bands/:id') do
   @band.update({:name => new_name})
   redirect("/bands/#{@band.id()}")
 end
+
+delete('/bands/:id') do
+  @band = Band.find(params.fetch('id'))
+  @band.destroy()
+  redirect('/')
+end

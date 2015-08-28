@@ -26,11 +26,21 @@ describe('the band path', :type => :feature) do
   it('allows user to update a bands name') do
     visit('/')
     click_link('Add a Band')
-    fill_in('band_name', :with => 'System of a down')
+    fill_in('band_name', :with => 'system of a down')
     click_button('Add Band')
     click_link('System of a down')
-    fill_in('update_name', :with => 'Weezer')
+    fill_in('update_name', :with => 'weezer')
     click_button('Edit Band')
     expect(page).to have_content('Weezer')
+  end
+
+  it('allows a user to delete a band') do
+    visit('/')
+    click_link('Add a Band')
+    fill_in('band_name', :with => 'system of a down')
+    click_button('Add Band')
+    click_link('System of a down')
+    click_button('Delete Band')
+    expect(page).not_to have_content('System of a down')
   end
 end
