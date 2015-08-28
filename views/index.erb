@@ -1,0 +1,14 @@
+<h1>EpiPalooza</h1>
+
+<h3>Bandlist 2015</h3><br>
+
+<% if @bands.any?() %>
+  <% @bands.each() do |band| %>
+    <p><%= band.name %></p><br>
+  <% end %>
+<% else %>
+  <h4>"Something touched me deep inside the day the music died."</h4>
+<% end %>
+
+<br>
+<a href='/bands' role='button' class='btn-sm btn-default'>Add a Band</a>
