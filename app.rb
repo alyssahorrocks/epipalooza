@@ -60,3 +60,8 @@ post('/venues') do
   @venue = Venue.create({:name => name})
   redirect('/venues')
 end
+
+get('/venues/:id') do
+  @venue = Venue.find(params.fetch('id'))
+  erb(:venue)
+end
