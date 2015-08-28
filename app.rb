@@ -47,3 +47,16 @@ delete('/bands/:id') do
   @band.destroy()
   redirect('/')
 end
+
+#--------------------VENUE PATH-------------------------#
+
+get('/venues') do
+  @venues = Venue.all()
+  erb(:venue_form)
+end
+
+post('/venues') do
+  name = params.fetch('venue_name')
+  @venue = Venue.create({:name => name})
+  redirect('/venues')
+end
