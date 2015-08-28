@@ -43,4 +43,16 @@ describe('the band path', :type => :feature) do
     click_button('Delete Band')
     expect(page).not_to have_content('System of a down')
   end
+
+  it('allows a user to add a venue to a band') do
+    @venue = Venue.create({:name => 'East stage'})
+    visit('/')
+    click_link('Add a Band')
+    fill_in('band_name', :with => 'system of a down')
+    click_button('Add Band')
+    click_link('System of a down')
+    select('East stage')
+    click_button('Book Venue')
+    expect(page).to have_content('East Stage')
+  end
 end

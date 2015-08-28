@@ -1,5 +1,6 @@
 require("bundler/setup")
 Bundler.require(:default)
+require('pry')
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
@@ -31,14 +32,23 @@ end
 
 get('/bands/:id') do
   @band = Band.find(params.fetch('id'))
+  @venues = Venue.all()
   erb(:band)
 end
 
-patch('/bands/:id') do
+patch('/bands/edit/:id') do
   id = params.fetch('id')
   new_name = params.fetch('update_name')
   @band = Band.find(id)
   @band.update({:name => new_name})
+  redirect("/bands/#{@band.id()}")
+end
+
+patch('/bands/:id') do
+  @band = Band.find(params.fetch('id'))
+  venue_ids = params.fetch('venue_ids')
+  @band.venues.push([venue_ids])
+  @venues = Venue.all()
   redirect("/bands/#{@band.id()}")
 end
 

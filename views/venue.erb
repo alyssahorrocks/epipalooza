@@ -1,5 +1,8 @@
 <h1>Bands playing on the <%= @venue.name() %>:</h1>
 
-
+<form action="/venues/<%= @venue.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn-sm btn-default">Delete Venue</button>
+</form>
 
 <a href="/">Back</a>
