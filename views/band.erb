@@ -24,13 +24,13 @@
   <p><a href="/venues">Add a venue!</a></p>
 <% end %>
 
-
 <form action="/bands/edit/<%= @band.id() %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <input id="update_name" name="update_name" placeholder="Update Band Name">
-  <button type="submit" class="btn-sm btn-default">Edit Band</button>
+  <button type="submit" class="btn-xm btn-default">Edit Band</button>
 </form>
 
+<br>
 <br>
 
 <form action="/bands/<%= @band.id() %>" method="post">
@@ -39,4 +39,5 @@
 </form>
 
 
-<a href="/">Back to Bandlist</a>
+
+<a id="venueBack" href="/">Back to BandList</a>

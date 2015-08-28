@@ -27,7 +27,6 @@ end
 post('/bands') do
   name = params.fetch("name")
   recipe = Recipe.create({:name => name, :instruction => nil})
-
 end
 
 get('/bands/:id') do

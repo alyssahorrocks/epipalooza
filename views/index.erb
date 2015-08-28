@@ -1,6 +1,6 @@
 <h1>EpiPalooza</h1>
 
-<h3>Bandlist 2015</h3><br>
+<h3>BandList 2015</h3>
 
 <% if @bands.any?() %>
   <% @bands.each() do |band| %>
@@ -11,10 +11,9 @@
         <% end %>
       <% end %>
     </p>
-    <br>
   <% end %>
 <% else %>
-  <h4>"Something touched me deep inside the day the music died."</h4>
+  <h4 id='lyrics'>"Something touched me deep inside the day the music died." -Don McLean</h4>
 <% end %>
 
 <br>

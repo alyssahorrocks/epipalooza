@@ -8,10 +8,10 @@
 
 <% if @venues.any?() %>
   <% @venues.each() do |venue| %>
-  <p><a href='/venues/<%= venue.id() %>'><%= venue.name() %></a></p><br>
+  <p><a href='/venues/<%= venue.id() %>'><%= venue.name() %></a></p>
   <% end %>
 <% else %>
-  <h4>"Turn up the lights in here baby, extra bright, I want y'all to see this."</h4>
+  <h4 id="lyrics">"Turn up the lights in here baby, extra bright, I want y'all to see this." -Kanye West</h4>
 <% end %>
 
-<a href="/">Back</a>
+<a id="venueBack" href="/">Back</a>
