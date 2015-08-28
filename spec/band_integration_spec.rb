@@ -45,14 +45,17 @@ describe('the band path', :type => :feature) do
   end
 
   it('allows a user to add a venue to a band') do
-    @venue = Venue.create({:name => 'East stage'})
     visit('/')
     click_link('Add a Band')
-    fill_in('band_name', :with => 'system of a down')
+    fill_in('band_name', :with => 'Fleet foxes')
     click_button('Add Band')
-    click_link('System of a down')
-    select('East stage')
+    click_link('Add or View a Venue')
+    fill_in('venue_name', :with => 'East stage')
+    click_button('Add Venue')
+    click_link('Back')
+    click_link('Fleet foxes')
+    check('East stage')
     click_button('Book Venue')
-    expect(page).to have_content('East Stage')
+    expect(page).to have_content('East stage')
   end
 end

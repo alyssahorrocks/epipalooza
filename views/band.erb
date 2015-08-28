@@ -5,16 +5,12 @@
     <% @band.venues().each() do |venue| %>
       <li><a href="/venues/<%= venue.id() %>"><%= venue.name() %></a></li>
     <% end %>
-  <% else %>
-    <p>TEST</p>
   <% end %>
 </ul>
 
 <h3>Book a Venue:</h3>
 <% if @venues.any?() %>
   <form action="/bands/<%= @band.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-
     <% @venues.each() do |venue| %>
     <div class="checkbox">
       <label>
@@ -22,7 +18,6 @@
       </label>
     </div>
     <% end %>
-
     <button type="submit" class='btn-sm btn-success'>Book Venue</button>
   </form>
 <% else %>
