@@ -23,3 +23,11 @@ get('/bands/:id') do
   @band = Band.find(params.fetch('id'))
   erb(:band)
 end
+
+patch('/bands/:id') do
+  id = params.fetch('id')
+  new_name = params.fetch('update_name')
+  @band = Band.find(id)
+  @band.update({:name => new_name})
+  redirect("/bands/#{@band.id()}")
+end

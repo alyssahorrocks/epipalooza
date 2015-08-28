@@ -1,2 +1,11 @@
-<h2><%= @band.name() %></h2>
+<h1><%= @band.name() %></h1>
+
+<form action="/bands/<%= @band.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input id="update_name" name="update_name" placeholder="Update Band Name">
+  <button type="submit" class="btn-sm btn-default">Edit Band</button>
+</form>
+
+
+
 <a href="/">Back to Bandlist</a>
