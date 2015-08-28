@@ -54,8 +54,8 @@ describe('the band path', :type => :feature) do
     click_button('Add Venue')
     click_link('Back')
     click_link('Fleet Foxes')
-    check('East stage')
+    check('East Stage')
     click_button('Book Venue')
-    expect(page).to have_content('East stage')
+    expect(page).to have_content('East Stage')
   end
 end
