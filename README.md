@@ -1,30 +1,26 @@
-# _EpiPalooza Stage Tracker_
+# EpiPalooza Stage Tracker
 
-##### _This application will track bands and the stages they are playing on during a musical event, {August 28, 2015}_
+##### This application will track bands and the stages they are playing on during a musical event. It was created to show what I learned about Ruby and ActiveRecord (database relationships) {August 28, 2015}
 
-#### By _**Alyssa Horrocks**_
+#### By **Alyssa Horrocks**
 
 ## Description
 
-_This application will track bands and the stages they play on during a large musical festival. Every band can have many stages and every stage can house many bands. This runs in Sinatra with ActiveRecord. This application was created while a student at Epicodus._
+This application will track bands and the stages they play on during a large musical festival. Every band can have many stages and every stage can house many bands. This runs in Sinatra with ActiveRecord. This application was created as a student at Epicodus.
 
 ## Setup
 
-* git clone https://github.com/ahorrocks2/code_review_bands_venues.git
-* rake db:create
-* rake db:schema:load
-
-_This application depends on Ruby version 2.2 and Sinatra as a framework_
+* `git clone https://github.com/alyssahorrocks/epipalooza.git`
+* `rake db:create`
+* `rake db:schema:load`
 
 ## Technologies Used
 
-_This app uses Ruby, Sinatra, and a bootswatch template as well as the gems: Sinatra, Sinatra-Contrib, and Rake._
+This app uses Ruby, Sinatra, and a bootswatch template as well as the gems: Sinatra, Sinatra-Contrib, and Rake.
 
 ### Legal
 
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
-
-Copyright (c) 2015 **_Alyssa Horrocks_**
+Copyright (c) 2015 **Alyssa Horrocks**
 
 This software is licensed under the MIT license.
 
